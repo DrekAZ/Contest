@@ -1,8 +1,5 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
-    //"command": "g++",
     "tasks": [
         {
             "label": "build",
@@ -19,11 +16,20 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "type": "shell",
+            "label": "cpp.exe build active file",
+            "command": "R:\\MinGW\\bin\\cpp.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "R:\\MinGW\\bin"
+            }
         }
     ]
-    //"isShellCommand": true,
-    //"showOutput": "always",
-    //"args":["-o","${fileBasenameNoExtension}","${file}","&","${fileBasenameNoExtension}.exe"],
-    //"isBuildCommand": true
-    
 }
